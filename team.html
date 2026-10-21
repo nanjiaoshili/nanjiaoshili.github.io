@@ -1,0 +1,254 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>球队 · 西安南郊势力足球俱乐部</title>
+  <meta name="description" content="西安南郊势力足球俱乐部——大秦军团南郊势力战斗组自己的球队。16人球员名单、管理团队、赛程战报与每周四训练征召，因观球相识、因踢球相聚。">
+  <meta name="keywords" content="西安南郊势力足球俱乐部,南郊势力,足球队,陕西联合,球迷球队,西安足球,业余足球,球员名单,大秦军团,陕西球迷">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="大秦军团南郊势力官网">
+  <meta property="og:title" content="西安南郊势力足球俱乐部 · 球队">
+  <meta property="og:description" content="看台上是助威方阵，球场上是并肩战友——16人名单、管理团队与训练征召。">
+  <meta property="og:image" content="images/team/nanjiaoshili.png">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%23d6362b'/%3E%3Ctext x='32' y='45' font-size='36' text-anchor='middle' fill='%23fff8ee' font-family='KaiTi,serif'%3E%E7%8B%BC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=ZCOOL+QingKe+HuangYou&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=17">
+</head>
+<body data-page="team">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="南郊势力 首页">
+        <span class="brand-marks">
+          <img src="images/logo/daqin.png" alt="大秦军团会徽">
+          <span class="brand-sep" aria-hidden="true"></span>
+          <img src="images/logo/nanjiaoshili.png" alt="南郊势力徽标">
+        </span>
+      </a>
+      <nav class="main-nav" aria-label="主导航">
+        <a href="index.html" data-nav="home">首页</a>
+        <a href="about.html" data-nav="about">南郊</a>
+        <a href="team.html" data-nav="team">球队</a>
+        <a href="gallery.html" data-nav="gallery">影像</a>
+        <a href="join.html" data-nav="join">加入</a>
+      </nav>
+      <a class="btn btn--primary btn--sm header-cta" href="join.html">加入战斗组</a>
+      <button class="nav-toggle" aria-label="打开菜单" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" aria-label="移动端导航">
+    <a href="index.html" data-nav="home">首页 <small>HOME</small></a>
+    <a href="about.html" data-nav="about">南郊 <small>SOUTH SIDE</small></a>
+    <a href="team.html" data-nav="team">球队 <small>OUR FC</small></a>
+    <a href="gallery.html" data-nav="gallery">影像 <small>GALLERY</small></a>
+    <a href="join.html" data-nav="join">加入 <small>JOIN US</small></a>
+    <a class="btn btn--primary m-cta" href="join.html">加入战斗组</a>
+  </nav>
+
+  <main id="main">
+    <!-- 页头 -->
+    <section class="page-hero">
+      <div class="hero-photo" aria-hidden="true">
+        <div class="bg-layer active" style="background-image:url('images/away_days/away_days.jpg');"></div>
+      </div>
+      <canvas id="embers" aria-hidden="true"></canvas>
+      <span class="hero-watermark" aria-hidden="true">蹴</span>
+      <div class="container">
+        <p class="crumbs">Our FC · 自家球队</p>
+        <h1>西安南郊势力<em>足球俱乐部</em></h1>
+        <p class="lead">本队由大秦南郊势力球迷组织成立，因观球相识，因踢球相聚！看台上是助威方阵，球场上是并肩战友——白天在看台上吼的，就是晚上在场上拼的。</p>
+        <p class="team-poem">从看台上齐声呐喊的球迷，<br>
+          到球场上并肩奔跑的队友。<br>
+          场上奋力拼抢，场下畅聊足球。<br>
+          <em>以球迷之名，共赴绿茵之约！</em>
+        </p>
+      </div>
+    </section>
+
+    <!-- 教练组与保障 -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Staff · 管理团队</p>
+          <h2>掌军之人，<em>护军之责</em></h2>
+          <p class="lead">球队负责人、主教练、领队、副领队——球场上的另一条战线。</p>
+        </div>
+        <div class="staff-wall" id="staff-wall"></div>
+        <script type="application/json" id="staff-data">
+        [
+          {"role": "球队负责人", "en": "Team Director", "glyph": "总", "name": "张莘", "note": "兼队长", "img": "images/team/陈涛_1.jpg",
+           "duties": ["全面统筹球队管理工作，协调各方资源", "制定球队长期发展规划及年度目标", "监督各岗位职责落实情况，保障球队顺利运行"]},
+          {"role": "主教练", "en": "Head Coach", "glyph": "帅", "name": "姚敏", "img": "images/team/陈涛_1.jpg",
+           "duties": ["负责制定训练计划、比赛战术及队员技术指导", "组织赛前备战、临场指挥及赛后总结", "评估队员表现，提出人员调整建议"]},
+          {"role": "领队", "en": "Team Manager", "glyph": "领", "name": "李彭", "img": "images/team/陈涛_1.jpg",
+           "duties": ["负责球队日常事务管理（如场地预定、物资采购等）", "协调队员时间安排，确保训练及比赛出勤率", "对外联络赛事主办方、赞助单位及其他合作方"]},
+          {"role": "副领队", "en": "Assistant Manager", "glyph": "副", "name": "张涛", "img": "images/team/陈涛_1.jpg",
+           "duties": ["协助领队完成后勤保障工作", "管理球队经费收支及财务公示", "组织团建活动，增强团队凝聚力"]}
+        ]
+        </script>
+      </div>
+    </section>
+
+    <!-- 一线名单（页面主体） -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Squad · 球员名单</p>
+          <h2>全员列阵，<em>皆有番号</em></h2>
+          <p class="lead">西安南郊势力足球俱乐部球员名单——生于看台，战在球场。</p>
+        </div>
+        <div class="pos-filter reveal" role="tablist" aria-label="按位置筛选球员">
+          <button type="button" class="active" data-filter="ALL">全部</button>
+          <button type="button" data-filter="门将">门将</button>
+          <button type="button" data-filter="后卫">后卫</button>
+          <button type="button" data-filter="中场">中场</button>
+          <button type="button" data-filter="前锋">前锋</button>
+        </div>
+        <div class="player-wall" id="player-wall"></div>
+        <script type="application/json" id="squad-data">
+        [
+          {"num": 1,  "name": "李晓",   "pos": "门将", "h": 175, "birth": "1982-07-07", "img": "images/team/陈涛_1.jpg"},
+          {"num": 2,  "name": "杨振兴", "pos": "后卫", "h": 168, "birth": "1990-01-02", "img": "images/team/陈涛_1.jpg"},
+          {"num": 4,  "name": "李彭",   "pos": "后卫", "h": 170, "birth": "1982-01-09", "role": "领队", "img": "images/team/陈涛_1.jpg"},
+          {"num": 6,  "name": "刘琳",   "pos": "中场", "h": 173, "birth": "1984-06-29", "img": "images/team/陈涛_1.jpg"},
+          {"num": 7,  "name": "彭家坤", "pos": "前锋", "h": 180, "birth": "2004-02-18", "img": "images/team/陈涛_1.jpg"},
+          {"num": 9,  "name": "王乐",   "pos": "前锋", "h": 183, "birth": "1989-04-15", "img": "images/team/陈涛_1.jpg"},
+          {"num": 10, "name": "张莘",   "pos": "前锋", "h": 178, "birth": "1991-03-10", "role": "负责人", "img": "images/team/陈涛_1.jpg"},
+          {"num": 11, "name": "陈文海", "pos": "前锋", "h": 178, "birth": "1986-04-06", "img": "images/team/陈涛_1.jpg"},
+          {"num": 13, "name": "王康康", "pos": "后卫", "h": 175, "birth": "1994-12-08", "img": "images/team/陈涛_1.jpg"},
+          {"num": 18, "name": "李磊",   "pos": "后卫", "h": 165, "birth": "1994-08-18", "img": "images/team/陈涛_1.jpg"},
+          {"num": 21, "name": "桑子豪", "pos": "后卫", "h": 178, "birth": "2002-09-17", "img": "images/team/陈涛_1.jpg"},
+          {"num": 22, "name": "张涛",   "pos": "中场", "h": 178, "birth": "1984-11-25", "role": "副领队", "img": "images/team/陈涛_1.jpg"},
+          {"num": 28, "name": "梁正坤", "pos": "后卫", "h": 180, "birth": "1988-08-23", "img": "images/team/陈涛_1.jpg"},
+          {"num": 49, "name": "姚敏",   "pos": "中场", "h": 170, "birth": "1978-06-02", "role": "主教练", "img": "images/team/陈涛_1.jpg"},
+          {"num": 57, "name": "王宏亮", "pos": "后卫", "h": 178, "birth": "1989-01-11", "img": "images/team/陈涛_1.jpg"},
+          {"num": 71, "name": "范家宇", "pos": "门将", "h": 189, "birth": "2006-09-08", "img": "images/team/陈涛_1.jpg"}
+        ]
+        </script>
+      </div>
+    </section>
+
+    <!-- 战绩 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Results · 战报</p>
+          <h2>踢过的仗，<em>都记着账</em></h2>
+          <p class="lead">战报由宣传记录组赛后更新，以下为版位示例——比分录入后即为正式战史。</p>
+        </div>
+        <div class="results-marquee">
+          <div class="results-track" id="results-track">
+            <article class="result">
+              <p class="round">友谊赛 · 第 1 战</p>
+              <p class="score"><span class="team">南郊势力</span><span class="sep">VS</span><span class="opp">待录</span><small>比分待录入</small></p>
+              <p class="meta">时间 / 场地：待更新</p>
+            </article>
+            <article class="result">
+              <p class="round">友谊赛 · 第 2 战</p>
+              <p class="score"><span class="team">南郊势力</span><span class="sep">VS</span><span class="opp">待录</span><small>比分待录入</small></p>
+              <p class="meta">时间 / 场地：待更新</p>
+            </article>
+            <article class="result">
+              <p class="round">杯赛 · 小组赛</p>
+              <p class="score"><span class="team">南郊势力</span><span class="sep">VS</span><span class="opp">待录</span><small>比分待录入</small></p>
+              <p class="meta">时间 / 场地：待更新</p>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 队徽与队旗 -->
+    <section class="section section--alt">
+      <div class="container">
+        <div class="crest-grid">
+          <figure class="crest-card reveal">
+            <img src="images/team/nanjiaoshili.png" alt="西安南郊势力足球俱乐部队徽">
+            <figcaption>队徽 · Club Crest</figcaption>
+          </figure>
+          <figure class="still reveal" style="--d:0.08s">
+            <img src="images/team/西安南郊势力足球俱乐部.png" alt="西安南郊势力足球俱乐部队旗" loading="lazy">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- 训练与征召 -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <p class="eyebrow">Training · 训练与征召</p>
+          <h2>周周有约，<em>战则必到</em></h2>
+        </div>
+        <ul class="rules-list reveal" style="max-width: 780px;">
+          <li><span><b>每周训练：</b>每周四固定约球（具体时间地点以群通知为准），出勤自愿，状态自己负责，态度不能松。</span></li>
+          <li><span><b>赛前征召：</b>比赛前三天在群内发起名单接龙，先报先上，伤停自理，无人缺席无人埋怨。</span></li>
+          <li><span><b>装备自备：</b>护腿板必带，球衣统一订制，球鞋按场地选择——草地碎钉，人工草长钉。</span></li>
+          <li><span><b>友谊第一：</b>对抗可以有，火气不能有。西安南郊势力足球俱乐部的名声，比三分更重要。</span></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>想上场的，这队你直接进</h2>
+        <p>报名表里选「南郊势力足球队」，教练组会私聊你安排试训——号码先挑先得。</p>
+        <a class="btn btn--ghost" href="join.html">报名入队</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="brand" href="index.html">
+            <span class="brand-marks">
+              <img src="images/logo/daqin.png" alt="大秦军团会徽">
+              <span class="brand-sep" aria-hidden="true"></span>
+              <img src="images/logo/nanjiaoshili.png" alt="南郊势力徽标">
+            </span>
+          </a>
+          <img class="footer-script" src="images/logo/daqin-script-logo.png" alt="大秦军团">
+          <p>大秦军团南郊势力战斗组，成立于 2018 年 12 月 12 日。为球队的胜利而拼搏，为每一份荣耀点燃热血。</p>
+        </div>
+        <div class="footer-col">
+          <h4>阵地导航</h4>
+          <ul>
+            <li><a href="index.html">首页</a></li>
+            <li><a href="about.html">军团编制</a></li>
+            <li><a href="team.html">自家球队</a></li>
+            <li><a href="gallery.html">战地影像</a></li>
+            <li><a href="join.html">加入我们</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>找到我们</h4>
+          <ul>
+            <li><span>微信群：见「加入我们」页</span></li>
+            <li><span>官方抖音号：南郊势力 · 半年浏览 70万+</span></li>
+            <li><span>主场：西安国际足球中心 · 南看台 B203</span></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> 南郊势力战斗组</span>
+        <span>球迷自发组织 · 非官方站点</span>
+        <span>For The Team · Always</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="js/main.js?v=17"></script>
+</body>
+</html>

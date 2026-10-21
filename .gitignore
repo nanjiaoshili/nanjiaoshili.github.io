@@ -1,0 +1,14 @@
+# 本地工具记录（Mimosa 扫描历史）
+.mimosa/
+
+# 设计源文件（站点不直接使用，避免仓库体积过大）
+*.psd
+*.cdr
+
+# 本地内部说明（不发布）
+README.local.md
+
+# 系统文件
+Thumbs.db
+desktop.ini
+.DS_Store
