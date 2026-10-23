@@ -11,6 +11,9 @@ images/2026*/
 # 本地内部说明（不发布）
 README.local.md
 
+# 球队成员照片原片备份（本地保留，不入库；网页用 images/team 内压缩版）
+_originals/
+
 # 系统文件
 Thumbs.db
 desktop.ini
