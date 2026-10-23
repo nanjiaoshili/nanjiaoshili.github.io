@@ -1315,7 +1315,14 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 }
 .result .score > * { white-space: nowrap; }
 .result .score .sep { color: var(--red); }
-.result .score small { font-size: 14px; color: var(--ash); letter-spacing: 1px; }
+.result .score .res {
+  font-family: var(--font-util);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--ash);
+}
+.result--win .score .res { color: var(--gold); }
 .result .meta { margin-top: 10px; color: var(--ash); font-size: 13px; letter-spacing: 1px; }
 
 /* 真实战绩 */
@@ -1333,15 +1340,7 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 .result--win .res-flag { color: var(--gold); border-color: rgba(201, 162, 84, 0.55); background: rgba(201, 162, 84, 0.1); }
 .result--loss .res-flag { color: var(--ash); border-color: #3d3d48; }
 .result .score .team,
-.result .score .opp { font-size: 27px; letter-spacing: 1px; }
-.result .res-line { margin-top: 8px; }
-.result .res {
-  font-family: var(--font-util);
-  font-weight: 600;
-  font-size: 32px;
-  letter-spacing: 1px;
-  color: var(--gold);
-}
+.result .score .opp { font-size: 24px; letter-spacing: 1px; }
 .result--loss .res { color: var(--ash); }
 
 /* 滚动战报 */
@@ -1359,17 +1358,16 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 }
 .results-marquee:hover .results-track,
 .results-marquee:focus-within .results-track { animation-play-state: paused; }
-.results-track .result { flex: 0 0 auto; width: 400px; }
+.results-track .result { flex: 0 0 auto; width: 380px; }
 @keyframes resultsScroll {
   to { transform: translateX(calc(-50% - 9px)); }
 }
 @media (max-width: 640px) {
   .results-track .result { width: 272px; }
   .result .score { font-size: 22px; gap: 8px; }
-  .result .score small { font-size: 11.5px; }
   .result .score .team,
   .result .score .opp { font-size: 16px; }
-  .result .res { font-size: 26px; }
+  .result .score .res { font-size: 11.5px; }
 }
 @media (prefers-reduced-motion: reduce) {
   .results-track { animation: none; }
