@@ -141,6 +141,25 @@
 }
 .am-close:hover { color: var(--red); border-color: var(--red); }
 
+/* 查看原图：打开未压缩的存档原片 */
+.am-orig {
+  flex-shrink: 0;
+  font-family: var(--font-util);
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--gold);
+  background: none;
+  border: 1px solid rgba(201, 162, 84, 0.5);
+  padding: 9px 14px;
+  white-space: nowrap;
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s;
+}
+.am-orig:hover { color: var(--paper); border-color: var(--paper); }
+@media (max-width: 560px) {
+  .am-orig { padding: 7px 10px; font-size: 11px; letter-spacing: 1px; }
+}
+
 .am-stage {
   position: relative;
   flex: 1;

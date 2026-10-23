@@ -1612,6 +1612,32 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   color: var(--ash);
 }
 
+/* ---------- 球员/管理团队卡片「原图」链接（新窗口打开存档原片） ---------- */
+.staff-card { position: relative; }
+.p-orig {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 4;
+  font-family: var(--font-util);
+  font-size: 11px;
+  letter-spacing: 2px;
+  line-height: 1;
+  color: var(--gold);
+  background: rgba(10, 10, 12, 0.82);
+  border: 1px solid rgba(201, 162, 84, 0.55);
+  padding: 6px 10px;
+  opacity: 0;
+  transition: opacity 0.25s, color 0.25s, border-color 0.25s;
+}
+.p-orig:hover { color: var(--paper); border-color: var(--paper); }
+.player-card:hover .p-orig,
+.staff-card:hover .p-orig { opacity: 1; }
+.p-orig--staff { bottom: auto; top: 12px; }
+@media (hover: none) {
+  .p-orig { opacity: 0.92; }
+}
+
 /* ---------- 队徽与队旗 ---------- */
 .crest-grid {
   display: flex;
@@ -1878,7 +1904,7 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   .creed-item .wm { font-size: 104px; }
 }
 
-/* ---------- 现任班子（组长 / 副组长） ---------- */
+/* ---------- 现任班子（组长 / 副组长 / 各条线负责人） ---------- */
 .leader-wall {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2132,6 +2158,21 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   }
 }
 .page-hero .lead { margin-top: 20px; color: var(--ash); max-width: 640px; font-size: 16.5px; }
+
+/* 球队页页头：合影背景整体调亮（仅球队页） */
+body[data-page="team"] .page-hero .hero-photo .bg-layer {
+  filter: saturate(0.95) brightness(1.22) contrast(0.98);
+}
+body[data-page="team"] .page-hero .hero-photo::after {
+  background:
+    linear-gradient(90deg, rgba(10, 10, 12, 0.82) 0%, rgba(10, 10, 12, 0.62) 48%, rgba(10, 10, 12, 0.30) 100%),
+    linear-gradient(0deg, var(--ink) 2%, transparent 40%);
+}
+@media (max-width: 880px) {
+  body[data-page="team"] .page-hero .hero-photo::after {
+    background: linear-gradient(0deg, rgba(10, 10, 12, 0.88) 24%, rgba(10, 10, 12, 0.58) 100%);
+  }
+}
 
 /* ---------- 响应式 ---------- */
 @media (max-width: 1024px) {

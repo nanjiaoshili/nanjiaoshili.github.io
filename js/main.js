@@ -276,6 +276,19 @@
           '<span class="p-line">' + (p.pos || "") + (p.h ? " · " + p.h + "cm" : "") + "</span>" +
           (p.birth ? '<span class="p-birth">' + p.birth + "</span>" : "");
         card.appendChild(pb);
+
+        /* 有存档原片的卡片，悬浮显示「原图」链接（新窗口打开未压缩原片） */
+        if (p.img && p.img.indexOf("images/team/") === 0 &&
+            p.img.toLowerCase().slice(-4) === ".jpg" && p.img.indexOf("陈涛_1") === -1) {
+          var po = document.createElement("a");
+          po.className = "p-orig";
+          po.href = "images/originals/team/" + encodeURIComponent(p.img.split("/").pop());
+          po.target = "_blank";
+          po.rel = "noopener";
+          po.textContent = "原图";
+          po.setAttribute("aria-label", "在新窗口查看" + (p.name || "") + "的原图");
+          card.appendChild(po);
+        }
         playerWall.appendChild(card);
       });
     } catch (e) { /* 数据格式错误时静默保留空墙 */ }
@@ -332,6 +345,18 @@
           "<small>" + (s.en || "") + "</small>" +
           (duties ? '<ul class="staff-duties">' + duties + "</ul>" : "");
         card.appendChild(body);
+
+        if (s.img && s.img.indexOf("images/team/") === 0 &&
+            s.img.toLowerCase().slice(-4) === ".jpg" && s.img.indexOf("陈涛_1") === -1) {
+          var so = document.createElement("a");
+          so.className = "p-orig p-orig--staff";
+          so.href = "images/originals/team/" + encodeURIComponent(s.img.split("/").pop());
+          so.target = "_blank";
+          so.rel = "noopener";
+          so.textContent = "原图";
+          so.setAttribute("aria-label", "在新窗口查看" + (s.name || "") + "的原图");
+          card.appendChild(so);
+        }
         staffWall.appendChild(card);
       });
     } catch (e) { /* 数据格式错误时静默 */ }
@@ -380,6 +405,18 @@
           '<span class="l-role">' + (l.role || "") + "</span>" +
           '<strong class="l-name">' + (l.name || "") + "</strong>";
         card.appendChild(body);
+
+        if (l.img && l.img.indexOf("images/team/") === 0 &&
+            l.img.toLowerCase().slice(-4) === ".jpg" && l.img.indexOf("陈涛_1") === -1) {
+          var lo = document.createElement("a");
+          lo.className = "p-orig p-orig--staff";
+          lo.href = "images/originals/team/" + encodeURIComponent(l.img.split("/").pop());
+          lo.target = "_blank";
+          lo.rel = "noopener";
+          lo.textContent = "原图";
+          lo.setAttribute("aria-label", "在新窗口查看" + (l.name || "") + "的原图");
+          card.appendChild(lo);
+        }
 
         leaderWall.appendChild(card);
       });

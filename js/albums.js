@@ -176,6 +176,29 @@
   modal.querySelector(".am-prev").addEventListener("click", function () { step(-1); });
   modal.querySelector(".am-next").addEventListener("click", function () { step(1); });
 
+  /* ---------- 查看原图：懒加载编号→原片文件名清单，新窗口打开未压缩原片 ---------- */
+  var origBtn = modal.querySelector(".am-orig");
+  var origCache = {};
+  function origList(a, cb) {
+    if (origCache.hasOwnProperty(a.id)) { cb(origCache[a.id]); return; }
+    fetch(a.dir + "/orig.json")
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (list) { origCache[a.id] = Array.isArray(list) ? list : null; cb(origCache[a.id]); })
+      .catch(function () { origCache[a.id] = null; cb(null); });
+  }
+  if (origBtn) {
+    origBtn.addEventListener("click", function () {
+      if (!cur.album) return;
+      origList(cur.album, function (list) {
+        var hint = window.showToast || function () {};
+        if (!list) { hint("该相册的存档原图还没有上传"); return; }
+        var f = list[cur.index];
+        if (!f) { hint("这张照片没有存档原图"); return; }
+        window.open("images/" + cur.album.id + "/" + encodeURIComponent(f), "_blank", "noopener");
+      });
+    });
+  }
+
   /* 触摸/指针滑动 + 点击图片左右两侧翻页（移动端） */
   var startX = 0;
   var moved = false;
