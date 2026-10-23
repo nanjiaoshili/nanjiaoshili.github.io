@@ -42,6 +42,15 @@
       score: "2 : 2",
       cover: 1,
       count: 141
+    },
+    {
+      id: "20260905",
+      title: "陕西联合 VS 定南赣联",
+      date: "2026.09.05",
+      venue: "西安国际足球中心",
+      score: "2 : 1",
+      cover: 1,
+      count: 135
     }
   ];
 
