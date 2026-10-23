@@ -253,7 +253,7 @@
         card.dataset.pos = p.pos || "";
         var img = document.createElement("img");
         img.src = p.img;
-        img.alt = (p.name || "球员") + "照片";
+        img.alt = (p.name || "球员") + " " + p.num + " 号 " + (p.pos || "") + " 西安南郊势力足球俱乐部球员照片";
         img.loading = "lazy";
         img.onerror = function () { img.remove(); };
         img.onload = function () { card.classList.add("has-photo"); };
@@ -309,7 +309,7 @@
         photo.className = "staff-photo";
         var img = document.createElement("img");
         img.src = s.img;
-        img.alt = s.role + "照片";
+        img.alt = (s.name || s.role) + " " + s.role + " 西安南郊势力足球俱乐部管理团队照片";
         img.loading = "lazy";
         img.onerror = function () { img.remove(); };
         img.onload = function () { card.classList.add("has-photo"); };
@@ -389,4 +389,32 @@
   /* ---------- 页脚年份 ---------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  /* ---------- 页脚社交二维码（触屏点击展开） ---------- */
+  var socialItems = document.querySelectorAll(".social-item");
+  if (socialItems.length) {
+    var closeSocials = function () {
+      socialItems.forEach(function (item) {
+        item.classList.remove("open");
+        var b = item.querySelector(".social-btn");
+        if (b) b.setAttribute("aria-expanded", "false");
+      });
+    };
+    socialItems.forEach(function (item) {
+      var btn = item.querySelector(".social-btn");
+      if (!btn) return;
+      btn.addEventListener("click", function (e) {
+        e.stopPropagation();
+        var wasOpen = item.classList.contains("open");
+        closeSocials();
+        if (!wasOpen) {
+          item.classList.add("open");
+          btn.setAttribute("aria-expanded", "true");
+        }
+      });
+      var qr = item.querySelector(".social-qr");
+      if (qr) qr.addEventListener("click", function (e) { e.stopPropagation(); });
+    });
+    document.addEventListener("click", closeSocials);
+  }
 })();

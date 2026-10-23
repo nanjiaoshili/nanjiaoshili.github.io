@@ -2242,3 +2242,76 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   .seal { opacity: 1; }
   .ticker-track { animation: none; }
 }
+
+
+/* ---------- 页脚社交二维码 ---------- */
+.social-row { display: flex; gap: 12px; }
+.social-item { position: relative; }
+.social-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  width: 62px;
+  padding: 10px 6px 8px;
+  background: var(--ink);
+  border: 1px solid var(--line);
+  color: var(--ash);
+  cursor: pointer;
+  transition: color 0.25s, border-color 0.25s, background 0.25s;
+}
+.social-btn svg { width: 22px; height: 22px; fill: currentColor; }
+.social-btn span { font-size: 11px; letter-spacing: 2px; color: inherit; }
+.social-btn:hover,
+.social-item.open .social-btn,
+.social-item:focus-within .social-btn { color: var(--gold); border-color: rgba(201, 162, 84, 0.6); background: #16161b; }
+.social-qr {
+  position: absolute;
+  left: 50%;
+  bottom: calc(100% + 12px);
+  transform: translate(-50%, 8px);
+  width: 170px;
+  padding: 12px;
+  background: #131318;
+  border: 1px solid var(--line);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+  z-index: 30;
+}
+.social-item:hover .social-qr,
+.social-item:focus-within .social-qr,
+.social-item.open .social-qr { opacity: 1; visibility: visible; pointer-events: auto; transform: translate(-50%, 0); }
+.social-qr::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 10px;
+  height: 10px;
+  background: #131318;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transform: translateX(-50%) rotate(45deg);
+}
+.social-qr .qr-box {
+  width: 146px;
+  height: 146px;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  background:
+    repeating-linear-gradient(0deg, rgba(201, 162, 84, 0.16) 0 9px, transparent 9px 18px),
+    repeating-linear-gradient(90deg, rgba(201, 162, 84, 0.16) 0 9px, transparent 9px 18px),
+    var(--ink);
+  border: 1px solid var(--line);
+}
+.social-qr .qr-box span { font-size: 11px; line-height: 1.6; letter-spacing: 1px; color: #6d6d76; background: var(--ink); padding: 4px 8px; }
+.social-qr b { display: block; text-align: center; margin-top: 9px; font-family: var(--font-display); font-weight: 400; font-size: 13px; letter-spacing: 2px; color: var(--gold); }
+.social-addr { margin-top: 14px; font-size: 12.5px; letter-spacing: 1px; color: #6d6d76; }
+@media (max-width: 640px) {
+  .social-qr { left: 0; transform: translate(0, 8px); }
+  .social-item.open .social-qr,
+  .social-item:focus-within .social-qr { transform: translate(0, 0); }
+}

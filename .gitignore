@@ -5,6 +5,9 @@
 *.psd
 *.cdr
 
+# 比赛原始照片（体积过大；站点只使用 images/albums 下压缩后的文件）
+images/2026*/
+
 # 本地内部说明（不发布）
 README.local.md
 
