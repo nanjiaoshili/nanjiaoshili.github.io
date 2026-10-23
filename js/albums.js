@@ -51,6 +51,15 @@
       score: "2 : 1",
       cover: 1,
       count: 135
+    },
+    {
+      id: "20260814",
+      title: "陕西联合 VS 长春亚泰",
+      date: "2026.08.14",
+      venue: "西安国际足球中心",
+      score: "2 : 1",
+      cover: 1,
+      count: 199
     }
   ];
 
