@@ -1299,7 +1299,7 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 .player.slot b { color: var(--ash); }
 
 .result-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-.result { position: relative; background: var(--ink-3); border: 1px solid var(--line); padding: 26px 24px 24px; transition: border-color 0.3s; }
+.result { position: relative; overflow: hidden; text-align: center; background: var(--ink-3); border: 1px solid var(--line); padding: 26px 24px 24px; transition: border-color 0.3s; }
 .result:hover { border-color: var(--gold); }
 .result .round { font-family: var(--font-util); font-size: 11px; letter-spacing: 3px; color: var(--gold); text-transform: uppercase; }
 .result .score {
@@ -1309,6 +1309,7 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   letter-spacing: 1px;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 12px;
 }
