@@ -114,6 +114,9 @@
     if (!a) return;
     cur.index = (index + a.count) % a.count;
     imgEl.decoding = "async";
+    imgEl.style.opacity = "0.35";
+    imgEl.onload = function () { imgEl.style.opacity = ""; };
+    imgEl.onerror = function () { imgEl.style.opacity = ""; };
     imgEl.src = src(a, cur.index + 1, "full");
     imgEl.alt = caption(a, cur.index + 1);
     counterEl.textContent = (cur.index + 1) + " / " + a.count;
@@ -127,6 +130,10 @@
       var left = active.offsetLeft - thumbsEl.clientWidth / 2 + active.clientWidth / 2;
       thumbsEl.scrollLeft = Math.max(0, left);
     }
+    // 预加载下一张，避免手机网络下切换后仍显示旧图
+    var nextImg = new Image();
+    nextImg.decoding = "async";
+    nextImg.src = src(a, ((cur.index + 1) % a.count) + 1, "full");
   }
 
   function buildThumbs(a) {
@@ -148,9 +155,53 @@
     thumbsEl.appendChild(frag);
   }
 
+  var lastNav = 0;
+  function step(delta) {
+    var now = Date.now();
+    if (now - lastNav < 150) return;
+    lastNav = now;
+    show(cur.index + delta);
+  }
+
   modal.querySelector(".am-close").addEventListener("click", closeAlbum);
-  modal.querySelector(".am-prev").addEventListener("click", function () { show(cur.index - 1); });
-  modal.querySelector(".am-next").addEventListener("click", function () { show(cur.index + 1); });
+  modal.querySelector(".am-prev").addEventListener("click", function () { step(-1); });
+  modal.querySelector(".am-next").addEventListener("click", function () { step(1); });
+
+  /* 触摸/指针滑动 + 点击图片左右两侧翻页（移动端） */
+  var startX = 0;
+  var moved = false;
+
+  imgEl.addEventListener("touchstart", function (e) {
+    startX = e.touches[0].clientX;
+    moved = false;
+  }, { passive: true });
+  imgEl.addEventListener("touchmove", function (e) {
+    if (Math.abs(e.touches[0].clientX - startX) > 12) moved = true;
+  }, { passive: true });
+  imgEl.addEventListener("touchend", function (e) {
+    var dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+  }, { passive: true });
+
+  imgEl.addEventListener("pointerdown", function (e) {
+    if (e.pointerType === "mouse") return;
+    startX = e.clientX;
+    moved = false;
+  });
+  imgEl.addEventListener("pointerup", function (e) {
+    if (e.pointerType === "mouse") return;
+    var dx = e.clientX - startX;
+    if (Math.abs(dx) > 40) step(dx < 0 ? 1 : -1);
+  });
+
+  imgEl.addEventListener("click", function (e) {
+    if (moved) { moved = false; return; }
+    var r = imgEl.getBoundingClientRect();
+    if (!r.width) return;
+    var x = e.clientX - r.left;
+    if (x < r.width * 0.35) step(-1);
+    else if (x > r.width * 0.65) step(1);
+  });
 
   modal.addEventListener("click", function (e) {
     if (e.target === modal) closeAlbum();
@@ -159,18 +210,9 @@
   document.addEventListener("keydown", function (e) {
     if (!modal.classList.contains("open")) return;
     if (e.key === "Escape") closeAlbum();
-    else if (e.key === "ArrowLeft") show(cur.index - 1);
-    else if (e.key === "ArrowRight") show(cur.index + 1);
+    else if (e.key === "ArrowLeft") step(-1);
+    else if (e.key === "ArrowRight") step(1);
   });
-
-  var startX = 0;
-  imgEl.addEventListener("touchstart", function (e) {
-    startX = e.touches[0].clientX;
-  }, { passive: true });
-  imgEl.addEventListener("touchend", function (e) {
-    var dx = e.changedTouches[0].clientX - startX;
-    if (Math.abs(dx) > 40) show(cur.index + (dx < 0 ? 1 : -1));
-  }, { passive: true });
 
   /* ---------- SEO：相册结构化数据（不在页面显示） ---------- */
   function injectGallerySchema() {

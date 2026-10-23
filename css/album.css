@@ -155,6 +155,7 @@
   max-height: 100%;
   object-fit: contain;
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.65);
+  transition: opacity 0.2s;
 }
 .am-nav {
   position: absolute;
