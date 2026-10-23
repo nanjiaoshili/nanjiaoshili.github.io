@@ -2295,19 +2295,8 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
   border-bottom: 1px solid var(--line);
   transform: translateX(-50%) rotate(45deg);
 }
-.social-qr .qr-box {
-  width: 146px;
-  height: 146px;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  background:
-    repeating-linear-gradient(0deg, rgba(201, 162, 84, 0.16) 0 9px, transparent 9px 18px),
-    repeating-linear-gradient(90deg, rgba(201, 162, 84, 0.16) 0 9px, transparent 9px 18px),
-    var(--ink);
-  border: 1px solid var(--line);
-}
-.social-qr .qr-box span { font-size: 11px; line-height: 1.6; letter-spacing: 1px; color: #6d6d76; background: var(--ink); padding: 4px 8px; }
+.social-qr .qr-box { width: 146px; height: 146px; padding: 0; overflow: hidden; border: 1px solid var(--line); background: #fff; }
+.social-qr .qr-box img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .social-qr b { display: block; text-align: center; margin-top: 9px; font-family: var(--font-display); font-weight: 400; font-size: 13px; letter-spacing: 2px; color: var(--gold); }
 .social-addr { margin-top: 14px; font-size: 12.5px; letter-spacing: 1px; color: #6d6d76; }
 @media (max-width: 640px) {
