@@ -1332,11 +1332,12 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 .result--win .res-flag { color: var(--gold); border-color: rgba(201, 162, 84, 0.55); background: rgba(201, 162, 84, 0.1); }
 .result--loss .res-flag { color: var(--ash); border-color: #3d3d48; }
 .result .score .team,
-.result .score .opp { font-size: 27px; letter-spacing: 1px; }
+.result .score .opp { font-size: 26px; letter-spacing: 1px; }
+.result .res-line { margin-top: 6px; }
 .result .res {
   font-family: var(--font-util);
   font-weight: 600;
-  font-size: 32px;
+  font-size: 30px;
   letter-spacing: 1px;
   color: var(--gold);
 }
@@ -1357,7 +1358,7 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 }
 .results-marquee:hover .results-track,
 .results-marquee:focus-within .results-track { animation-play-state: paused; }
-.results-track .result { flex: 0 0 auto; width: 400px; }
+.results-track .result { flex: 0 0 auto; width: 340px; }
 @keyframes resultsScroll {
   to { transform: translateX(calc(-50% - 9px)); }
 }
