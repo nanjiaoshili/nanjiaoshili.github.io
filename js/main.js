@@ -394,18 +394,6 @@
           '<strong class="l-name">' + (l.name || "") + "</strong>";
         card.appendChild(body);
 
-        if (l.img && l.img.indexOf("images/team/") === 0 &&
-            l.img.toLowerCase().slice(-4) === ".jpg" && l.img.indexOf("陈涛_1") === -1) {
-          var lo = document.createElement("a");
-          lo.className = "p-orig p-orig--staff";
-          lo.href = "images/originals/team/" + encodeURIComponent(l.img.split("/").pop());
-          lo.target = "_blank";
-          lo.rel = "noopener";
-          lo.textContent = "原图";
-          lo.setAttribute("aria-label", "在新窗口查看" + (l.name || "") + "的原图");
-          card.appendChild(lo);
-        }
-
         leaderWall.appendChild(card);
       });
     } catch (e) { /* 数据格式错误时静默 */ }
