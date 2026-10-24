@@ -345,18 +345,6 @@
           "<small>" + (s.en || "") + "</small>" +
           (duties ? '<ul class="staff-duties">' + duties + "</ul>" : "");
         card.appendChild(body);
-
-        if (s.img && s.img.indexOf("images/team/") === 0 &&
-            s.img.toLowerCase().slice(-4) === ".jpg" && s.img.indexOf("陈涛_1") === -1) {
-          var so = document.createElement("a");
-          so.className = "p-orig p-orig--staff";
-          so.href = "images/originals/team/" + encodeURIComponent(s.img.split("/").pop());
-          so.target = "_blank";
-          so.rel = "noopener";
-          so.textContent = "原图";
-          so.setAttribute("aria-label", "在新窗口查看" + (s.name || "") + "的原图");
-          card.appendChild(so);
-        }
         staffWall.appendChild(card);
       });
     } catch (e) { /* 数据格式错误时静默 */ }
