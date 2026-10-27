@@ -2165,6 +2165,7 @@ body[data-page="team"] .page-hero {
 }
 body[data-page="team"] .page-hero .hero-photo .bg-layer {
   filter: saturate(0.95) brightness(1.22) contrast(0.98);
+  background-position: center 48%;
 }
 body[data-page="team"] .page-hero .hero-photo::after {
   background:
