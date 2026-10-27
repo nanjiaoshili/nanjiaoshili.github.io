@@ -2159,7 +2159,10 @@ body.nav-open .nav-toggle span:nth-child(3) { top: 22px; transform: rotate(-45de
 }
 .page-hero .lead { margin-top: 20px; color: var(--ash); max-width: 640px; font-size: 16.5px; }
 
-/* 球队页页头：合影背景整体调亮（仅球队页） */
+/* 球队页页头：合影背景整体调亮、区块加高（仅球队页） */
+body[data-page="team"] .page-hero {
+  padding-bottom: clamp(120px, 17vw, 210px);
+}
 body[data-page="team"] .page-hero .hero-photo .bg-layer {
   filter: saturate(0.95) brightness(1.22) contrast(0.98);
 }
