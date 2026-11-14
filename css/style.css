@@ -2467,3 +2467,104 @@ body[data-page="team"] .page-hero .hero-photo::after {
 @media (max-width: 880px) {
   .club-intro { grid-template-columns: 1fr; }
 }
+
+/* ---------- 主队页 · 一线阵容 ---------- */
+.stat-chips { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-bottom: 28px; }
+.stat-chips span {
+  font-family: var(--font-util);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  border: 1px solid rgba(201, 162, 84, 0.45);
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+.stat-chips b { color: var(--paper); font-weight: 600; }
+
+.coach-line {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+  padding: 13px 18px;
+  background: linear-gradient(90deg, rgba(214, 54, 43, 0.12), var(--ink-3) 55%);
+  border: 1px solid rgba(214, 54, 43, 0.5);
+  margin-bottom: 34px;
+}
+.coach-line b {
+  font-family: var(--font-util);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.coach-line strong {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 3px;
+}
+
+.roster-group { margin-bottom: clamp(28px, 4vw, 42px); }
+.roster-group:last-child { margin-bottom: 0; }
+.roster-group h3 {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+  margin-bottom: 6px;
+}
+.roster-group h3 span {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: 4px;
+}
+.roster-group h3 small {
+  font-family: var(--font-util);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+.r-rows { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 36px; }
+.r-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 6px 12px;
+  padding: 9px 4px;
+  border-bottom: 1px dashed #22222a;
+}
+.r-row:hover { background: rgba(255, 255, 255, 0.02); }
+.r-num {
+  font-family: var(--font-util);
+  font-weight: 600;
+  font-size: 16px;
+  color: var(--gold);
+  min-width: 28px;
+  text-align: right;
+}
+.r-name { font-size: 15.5px; letter-spacing: 1px; color: var(--paper); }
+.r-nat {
+  font-style: normal;
+  font-size: 10.5px;
+  letter-spacing: 1px;
+  color: var(--ash);
+  border: 1px solid #3d3d48;
+  padding: 1px 7px;
+  margin-left: 4px;
+  white-space: nowrap;
+}
+.r-data {
+  margin-left: auto;
+  font-family: var(--font-util);
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  color: var(--ash);
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .r-rows { grid-template-columns: 1fr; }
+}
