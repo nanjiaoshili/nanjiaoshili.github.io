@@ -15,8 +15,8 @@
   --red-deep: #8e1f1a;     /* 暗朱 */
   --gold: #c9a254;         /* 鎏金 */
 
-  --font-display: "ZCOOL QingKe HuangYou", "Microsoft YaHei", "PingFang SC", sans-serif;
-  --font-brush: "Ma Shan Zheng", "KaiTi", "STKaiti", cursive;
+  --font-display: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
+  --font-brush: "Noto Serif SC", "Source Han Serif SC", "Songti SC", "SimSun", serif;
   --font-body: "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
   --font-util: "Oswald", "Arial Narrow", sans-serif;
 
@@ -79,8 +79,8 @@ button, input, select, textarea { font: inherit; color: inherit; }
   padding-inline: clamp(20px, 4vw, 40px);
 }
 
-.display { font-family: var(--font-display); font-weight: 400; }
-.brush { font-family: var(--font-brush); font-weight: 400; }
+.display { font-family: var(--font-display); font-weight: 600; }
+.brush { font-family: var(--font-brush); font-weight: 600; }
 .util { font-family: var(--font-util); font-weight: 500; }
 
 /* ---------- 按钮 ---------- */
@@ -2229,6 +2229,7 @@ body[data-page="team"] .page-hero .hero-photo::after {
   .mobile-nav a:nth-child(3) { transition-delay: 0.18s; }
   .mobile-nav a:nth-child(4) { transition-delay: 0.24s; }
   .mobile-nav a:nth-child(5) { transition-delay: 0.3s; }
+  .mobile-nav a:nth-child(6) { transition-delay: 0.36s; }
   .mobile-nav a small { font-family: var(--font-util); font-size: 11px; letter-spacing: 3px; color: var(--gold); }
   .mobile-nav a:hover, .mobile-nav a.active { color: var(--red); }
   .mobile-nav .m-cta { margin-top: 28px; align-self: flex-start; }
@@ -2348,4 +2349,121 @@ body[data-page="team"] .page-hero .hero-photo::after {
   .social-qr { left: 0; transform: translate(0, 8px); }
   .social-item.open .social-qr,
   .social-item:focus-within .social-qr { transform: translate(0, 0); }
+}
+
+/* ---------- 赛季收官存档（2026 赛季展示） ---------- */
+.season-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px 22px;
+  background: linear-gradient(90deg, rgba(214, 54, 43, 0.14), var(--ink-3) 55%);
+  border: 1px solid rgba(214, 54, 43, 0.55);
+  padding: 18px 26px;
+  margin-bottom: 22px;
+}
+.season-strip .ss-club {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-display);
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+.season-strip .ss-club img { width: 30px; height: 30px; object-fit: contain; }
+.season-strip .ss-facts { display: flex; flex-wrap: wrap; gap: 8px 10px; margin-left: auto; }
+.season-strip .ss-facts span {
+  font-family: var(--font-util);
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  color: var(--gold);
+  border: 1px solid rgba(201, 162, 84, 0.45);
+  padding: 6px 12px;
+  white-space: nowrap;
+}
+.season-strip .ss-facts b { color: var(--paper); font-weight: 600; }
+
+.fixture--done:not(.fixture--home) { border-style: dashed; }
+.fixture--done .fx-date b { color: var(--ash); }
+.fx-score {
+  font-size: clamp(22px, 3vw, 30px);
+  color: var(--paper);
+  letter-spacing: 2px;
+}
+.fx-score b { color: var(--gold); font-weight: 600; }
+.fx-score i { font-style: normal; color: var(--red); margin-inline: 2px; }
+.fx-tag--win { color: var(--gold); border-color: rgba(201, 162, 84, 0.5); }
+.fx-tag--lose { color: var(--ash); border-color: #3d3d48; }
+.fx-note a { color: var(--gold); border-bottom: 1px dashed rgba(201, 162, 84, 0.5); transition: color 0.25s; }
+.fx-note a:hover { color: var(--red); }
+
+@media (max-width: 880px) {
+  .season-strip .ss-facts { margin-left: 0; }
+}
+
+/* ---------- 主队页（陕西联合） ---------- */
+.club-intro {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: clamp(28px, 4vw, 52px);
+  align-items: start;
+}
+.club-intro .prose p { color: var(--ash); font-size: 16px; margin-bottom: 16px; }
+.club-intro .prose p:last-child { margin-bottom: 0; }
+.club-intro .prose b { color: var(--paper); font-weight: 500; }
+.club-crest-card {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  padding: 14px 22px 14px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.club-crest-card::after {
+  content: "";
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--red), var(--gold));
+}
+.club-crest-card img { width: 106px; margin: 0 auto 8px; filter: drop-shadow(0 10px 26px rgba(0, 0, 0, 0.55)); }
+.club-crest-card .cc-name { font-family: var(--font-display); font-size: 23px; letter-spacing: 4px; line-height: 1.25; }
+.club-crest-card .cc-en {
+  font-family: var(--font-util);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--gold);
+  text-transform: uppercase;
+  margin-top: 5px;
+}
+.club-crest-card .cc-note {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 12.5px;
+  line-height: 1.7;
+  color: var(--ash);
+  letter-spacing: 1px;
+}
+/* ---------- 全站正式字体字重（思源宋体替代黄油体 / 毛笔字） ---------- */
+.hero-title, .hero-slogan, .hero-flag, .seal span, .ticker .item,
+.btn, .brand-mark span, .brand-text b, .match-team .name,
+.section-head h2, .page-hero h1, .quote-band blockquote, .cta-banner h2,
+.card h3, .timeline h3, .fx-teams .t, .mobile-nav a,
+.squad .glyph, .squad h3, .creed h3, .creed-head .cn, .creed-item .core,
+.team-teaser .glyph, .team-teaser .txt b, .team-poem, .slogan-strip,
+.faq summary, .roster-group > h3, .result .score, .result .res-flag,
+.staff-body strong, .leader-body .l-name, .p-tag .p-num,
+.hero-badge .wolf, .badge-ring .wolf, .staff-card .ph .glyph, .leader-card .ph b,
+.club-crest-card .cc-name, .season-strip .ss-club,
+.footer-brand::after { font-weight: 600; }
+
+.hero-title, .page-hero h1, .section-head h2, .cta-banner h2 { font-weight: 700; }
+
+/* 小号宋体标签加一档字重，避免 400 过细 */
+.qr-box b, .contact-strip .row b, .kit b, .player b, .still .bar b,
+.photo-card .bar b, .social-qr b, .hero-badge .wolf-sub, .badge-ring .wolf-sub { font-weight: 500; }
+
+@media (max-width: 880px) {
+  .club-intro { grid-template-columns: 1fr; }
 }

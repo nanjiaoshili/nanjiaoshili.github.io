@@ -15,8 +15,8 @@
   <meta property="og:locale" content="zh_CN">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
-  <link href="https://fonts.loli.net/css2?family=ZCOOL+QingKe+HuangYou&family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@300;400;500;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=27">
+  <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=35">
 </head>
 <body data-page="home">
   <a class="skip-link" href="#main">跳到主要内容</a>
@@ -34,6 +34,7 @@
       <nav class="main-nav" aria-label="主导航">
         <a href="index.html" data-nav="home">首页</a>
         <a href="about.html" data-nav="about">南郊</a>
+        <a href="club.html" data-nav="club">主队</a>
         <a href="team.html" data-nav="team">球队</a>
         <a href="gallery.html" data-nav="gallery">影像</a>
         <a href="join.html" data-nav="join">加入</a>
@@ -49,6 +50,7 @@
   <nav class="mobile-nav" aria-label="移动端导航">
     <a href="index.html" data-nav="home">首页 <small>HOME</small></a>
     <a href="about.html" data-nav="about">南郊 <small>SOUTH SIDE</small></a>
+    <a href="club.html" data-nav="club">主队 <small>OUR CLUB</small></a>
     <a href="team.html" data-nav="team">球队 <small>OUR FC</small></a>
     <a href="gallery.html" data-nav="gallery">影像 <small>GALLERY</small></a>
     <a href="join.html" data-nav="join">加入 <small>JOIN US</small></a>
@@ -169,47 +171,59 @@
       </div>
     </section>
 
-    <!-- ====== 2026 赛季赛程 ====== -->
+    <!-- ====== 2026 赛季收官存档 ======
+         2027 赛程上页时：删除 .fixture-list 的 data-archive 属性，
+         替换下列比赛条目（复制现有结构改队徽/日期即可），
+         并把标题、摘要与赛季成绩条换回新赛季内容。 -->
     <section class="section" id="fixtures">
       <div class="container">
         <div class="section-head reveal">
-          <p class="eyebrow">Fixtures · 2026 Season</p>
-          <h2><em>2026</em> 赛季赛程</h2>
-          <p class="lead">两场远征，一场回家——赛季的最后一声哨，让它在南看台吹响。已完赛的场次不再显示。</p>
+          <p class="eyebrow">Fixtures · 2026 Season Review</p>
+          <h2><em>2026</em> 赛季 · 收官存档</h2>
+          <p class="lead">2026 赛季已落幕——陕西联合以中甲第 3 名完赛，收官阶段七战六捷。以下为赛季最后三战的战报存档；2027 赛季赛程公布后，这里会第一时间换上。</p>
         </div>
-        <div class="fixture-list">
-          <article class="fixture reveal" data-date="2026-10-25">
+        <div class="season-strip reveal">
+          <span class="ss-club"><img src="images/logos/shaanxi-lianhe.png" alt="陕西联合队徽" loading="lazy">2026 中甲联赛 · 最终战绩</span>
+          <span class="ss-facts">
+            <span>最终排名 <b>第 3 名</b></span>
+            <span>战绩 <b>15胜 6平 9负</b></span>
+            <span>积分 <b>51 分</b></span>
+            <span>进 / 失球 <b>57 / 30</b></span>
+          </span>
+        </div>
+        <div class="fixture-list" data-archive>
+          <article class="fixture fixture--done reveal" data-date="2026-10-25">
             <div class="fx-date"><b>10.25</b><span>周日 19:00</span></div>
             <p class="fx-teams">
               <span class="t"><img class="fx-logo" src="images/logos/wuxi-wugou.png" alt="无锡吴钩队徽" loading="lazy"><span class="tn">无锡吴钩</span></span>
-              <span class="vs">VS</span>
+              <span class="vs fx-score"><b>2</b><i>:</i><b>0</b></span>
               <span class="t strong"><img class="fx-logo" src="images/logos/shaanxi-lianhe.png" alt="陕西联合队徽" loading="lazy"><span class="tn">陕西联合</span></span>
             </p>
-            <span class="fx-tag fx-tag--away">客场 · 远征</span>
+            <span class="fx-tag fx-tag--away fx-tag--lose">客场 · 负</span>
           </article>
-          <article class="fixture reveal" style="--d:0.08s" data-date="2026-10-31">
+          <article class="fixture fixture--done reveal" style="--d:0.08s" data-date="2026-10-31">
             <div class="fx-date"><b>10.31</b><span>周六 14:30</span></div>
             <p class="fx-teams">
               <span class="t"><img class="fx-logo" src="images/logos/meizhou-kejia.png" alt="梅州客家犀旺队徽" loading="lazy"><span class="tn">梅州客家犀旺</span></span>
-              <span class="vs">VS</span>
+              <span class="vs fx-score"><b>0</b><i>:</i><b>2</b></span>
               <span class="t strong"><img class="fx-logo" src="images/logos/shaanxi-lianhe.png" alt="陕西联合队徽" loading="lazy"><span class="tn">陕西联合</span></span>
             </p>
-            <span class="fx-tag fx-tag--away">客场 · 远征</span>
+            <span class="fx-tag fx-tag--away fx-tag--win">客场 · 胜</span>
           </article>
-          <article class="fixture fixture--home reveal" style="--d:0.16s" data-date="2026-11-07">
+          <article class="fixture fixture--home fixture--done reveal" style="--d:0.16s" data-date="2026-11-07">
             <div class="fx-date"><b>11.07</b><span>周六 14:30</span></div>
             <div class="fx-main">
               <p class="fx-teams">
                 <span class="t strong"><img class="fx-logo" src="images/logos/shaanxi-lianhe.png" alt="陕西联合队徽" loading="lazy"><span class="tn">陕西联合</span></span>
-                <span class="vs">VS</span>
+                <span class="vs fx-score"><b>4</b><i>:</i><b>0</b></span>
                 <span class="t"><img class="fx-logo" src="images/logos/guangxi-hengchen.png" alt="广西恒宸队徽" loading="lazy"><span class="tn">广西恒宸</span></span>
               </p>
-              <p class="fx-sub">西安国际足球中心 · 南看台 B203 · 赛前 90 分钟集合</p>
+              <p class="fx-sub">西安国际足球中心 · 南看台 B203 · 赛季收官战</p>
             </div>
-            <span class="fx-tag fx-tag--home">主场 · B203</span>
+            <span class="fx-tag fx-tag--home">主场 · 收官大胜</span>
           </article>
         </div>
-        <p class="fx-note reveal">赛程如有调整，以官方发布为准；远征征召与购票信息会在群内同步。</p>
+        <p class="fx-note reveal">比分与排名以中足联官方发布为准；俱乐部详情见<a href="club.html">「主队 · 陕西联合」</a>页。2027 赛季赛程公布后即换上新赛程。</p>
       </div>
     </section>
 
@@ -265,6 +279,7 @@
           <ul>
             <li><a href="index.html">首页</a></li>
             <li><a href="about.html">军团编制</a></li>
+            <li><a href="club.html">我们的主队</a></li>
             <li><a href="team.html">自家球队</a></li>
             <li><a href="gallery.html">战地影像</a></li>
             <li><a href="join.html">加入我们</a></li>
@@ -307,6 +322,6 @@
 
   <div class="toast" role="status" aria-live="polite"></div>
   <script src="js/config.js"></script>
-  <script src="js/main.js?v=27"></script>
+  <script src="js/main.js?v=33"></script>
 </body>
 </html>

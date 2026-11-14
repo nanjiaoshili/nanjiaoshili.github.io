@@ -227,15 +227,23 @@
     });
   }
 
-  /* ---------- 赛程过期隐藏（比赛日次日 0 点起不再显示该场） ---------- */
+  /* ---------- 赛程过期处理 ----------
+     默认：比赛日次日 0 点起不再显示该场（新赛季赛程直接用）。
+     收官存档模式：给 .fixture-list 加 data-archive 属性，已完赛场次
+     不再移除，保留为存档展示。2027 赛程上页时：删掉 data-archive、
+     换上新的比赛条目即可恢复「只显示未来场次」的行为。 */
+  var fixtureList = document.querySelector(".fixture-list");
+  var isArchive = !!fixtureList && fixtureList.hasAttribute("data-archive");
   document.querySelectorAll(".fixture[data-date]").forEach(function (el) {
     var p = el.dataset.date.split("-").map(Number);
     var matchDay = new Date(p[0], p[1] - 1, p[2]);
     var now = new Date();
     var today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    if (today > matchDay) el.remove();
+    if (today > matchDay) {
+      if (isArchive) el.classList.add("fixture--done");
+      else el.remove();
+    }
   });
-  var fixtureList = document.querySelector(".fixture-list");
   if (fixtureList && !fixtureList.children.length) {
     var fixturesSection = document.getElementById("fixtures");
     if (fixturesSection) fixturesSection.remove();
