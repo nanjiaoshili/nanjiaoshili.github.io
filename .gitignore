@@ -16,3 +16,9 @@ _originals/
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# 2026 gala venue originals (local only; site uses compressed venue-*.jpg / venue-tour.mp4)
+images/2026yers/4d961db237ac04192b45c8b9c78a4847.jpg
+images/2026yers/5143c6c3160816b5ed2dd4fb7fba407f.jpg
+images/2026yers/5df252db8469cc2f1e50b5354ba1a64d.jpg
+images/2026yers/8eb54c67b933ef3a3b22b2da3c00f490.mp4

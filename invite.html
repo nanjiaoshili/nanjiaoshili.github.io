@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>年会邀请函 · 南郊势力 2026 年会</title>
+  <meta name="description" content="输入姓名，生成大秦军团南郊势力2026年会专属邀请函图片。邀请函二维码直达年会页面：2026.12.12（周六）17:30，西安雅悦东方宴会酒店三楼9号厅，会费150元/人。">
+  <meta name="keywords" content="南郊势力年会,年会邀请函,邀请函生成,大秦军团,南郊势力,2026年会,八周年">
+  <meta name="theme-color" content="#0a0a0c">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="大秦军团 · 南郊势力">
+  <meta property="og:title" content="年会邀请函 · 南郊势力 2026 年会">
+  <meta property="og:description" content="输入姓名，生成专属邀请函——执守八载热血，聚力南郊锋芒。">
+  <meta property="og:image" content="images/2026yers/venue-1.jpg">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="preconnect" href="https://gstatic.loli.net" crossorigin>
+  <link href="https://fonts.loli.net/css2?family=Noto+Sans+SC:wght@300;400;500;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/gala.css?v=3">
+</head>
+<body data-page="invite">
+  <a class="skip-link" href="#main">跳到主要内容</a>
+
+  <!-- ====== 顶栏（独立页） ====== -->
+  <header class="gala-header">
+    <div class="container gala-header-inner">
+      <a class="gala-brand" href="2026.html" aria-label="南郊势力 2026 年会">
+        <span class="marks">
+          <img src="images/logo/daqin.png" alt="大秦军团会徽">
+          <span class="sep" aria-hidden="true"></span>
+          <img src="images/logo/nanjiaoshili.png" alt="南郊势力徽标">
+        </span>
+        <span class="gala-brand-text">
+          <b>大秦军团 · 南郊势力</b>
+          <small>2026 ANNUAL GALA</small>
+        </span>
+      </a>
+      <nav class="gala-nav" aria-label="邀请函页导航">
+        <a href="index.html">官网</a>
+        <a class="btn btn--primary btn--sm" href="2026.html">年会详情</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ====== 页头 ====== -->
+    <section class="page-hero">
+      <span class="hero-watermark" aria-hidden="true">邀</span>
+      <div class="container">
+        <p class="crumbs">Invitation · 年会邀请函</p>
+        <h1>南郊势力 2026 年会 <em>邀请函</em></h1>
+        <p class="lead">输入姓名，生成专属邀请函图片；图片中的二维码指向年会页面，保存后可在群内分享。</p>
+      </div>
+    </section>
+
+    <!-- ====== 生成 ====== -->
+    <section class="section section--tight">
+      <div class="container">
+        <div class="invite-layout">
+          <!-- 左：表单 -->
+          <div class="invite-panel reveal">
+            <form id="invite-form" novalidate>
+              <div class="field">
+                <label for="invite-name">你的名字 · Name</label>
+                <input type="text" id="invite-name" maxlength="12" placeholder="例：杨建波" autocomplete="off" enterkeyhint="done">
+              </div>
+              <button class="btn btn--primary" type="submit">生成邀请函</button>
+              <p class="hint">建议 2-6 个字；生成后长按图片即可保存。</p>
+            </form>
+            <div class="invite-note">
+              <p>邀请函上的二维码指向年会页面：<a href="2026.html">www.nanjiaoshili.com/2026.html</a></p>
+              <p>扫码可查看年会时间地点、场地实拍与位置导航。</p>
+            </div>
+            <a class="btn btn--ghost btn--sm" href="2026.html">返回年会主页</a>
+          </div>
+
+          <!-- 右：预览 -->
+          <div class="invite-stage reveal" style="--d:0.1s">
+            <div class="invite-frame">
+              <img id="invite-preview" alt="南郊势力2026年会邀请函预览">
+            </div>
+            <canvas id="invite-canvas" aria-hidden="true" style="display:none;"></canvas>
+            <div class="invite-actions" id="invite-actions">
+              <button class="btn btn--primary btn--sm" type="button" id="invite-save">保存图片</button>
+              <button class="btn btn--ghost btn--sm" type="button" id="invite-redo">换个名字</button>
+            </div>
+            <p class="invite-tip">手机：长按图片保存到相册 · 电脑：点击「保存图片」下载</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ====== CTA ====== -->
+    <section class="cta-banner">
+      <div class="container reveal">
+        <h2>八载同心守看台，<em>一腔热血赴大秦</em></h2>
+        <p>2026.12.12（周六）17:30 · 西安雅悦东方宴会酒店 三楼 9 号厅</p>
+        <a class="btn btn--ghost" href="2026.html">查看年会详情</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ====== 页脚（独立页） ====== -->
+  <footer class="gala-footer">
+    <div class="container">
+      <div class="gf-marks">
+        <img src="images/logo/daqin.png" alt="大秦军团会徽">
+        <span class="sep" aria-hidden="true"></span>
+        <img src="images/logo/nanjiaoshili.png" alt="南郊势力徽标">
+      </div>
+      <img class="gf-script" src="images/logo/daqin-script-logo.png" alt="大秦军团">
+      <p class="gf-line">大秦军团南郊势力战斗组 · 2026 年会</p>
+      <p class="gf-sub">2026.12.12（周六）17:30 · 西安雅悦东方宴会酒店 三楼 9 号厅</p>
+      <nav class="gf-links" aria-label="页脚导航">
+        <a href="2026.html">年会主页</a>
+        <a href="index.html">返回官网</a>
+      </nav>
+      <p class="gf-cr">© 2026 南郊势力战斗组 · For The Team · Always</p>
+    </div>
+  </footer>
+
+  <div class="toast" role="status" aria-live="polite"></div>
+  <script src="js/gala.js?v=4"></script>
+  <script src="js/invite.js?v=5"></script>
+</body>
+</html>
