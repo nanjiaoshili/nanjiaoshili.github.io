@@ -801,6 +801,108 @@ button, input, select, textarea { font: inherit; color: inherit; }
 }
 .poster-frame img { width: 100%; height: auto; display: block; }
 
+/* ---------- 邀请函批量生成页 ---------- */
+.batch-panel {
+  background: var(--ink-3);
+  border: 1px solid var(--line);
+  padding: clamp(24px, 3.4vw, 38px);
+  display: grid;
+  gap: 20px;
+}
+.batch-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.field textarea {
+  width: 100%;
+  background: var(--ink);
+  border: 1px solid #2b2b33;
+  padding: 13px 15px;
+  font-size: 15px;
+  letter-spacing: 1px;
+  color: var(--paper);
+  resize: vertical;
+  min-height: 130px;
+  transition: border-color 0.25s, box-shadow 0.25s;
+}
+.field textarea:focus, .field input[type="file"]:focus {
+  outline: none;
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(214, 54, 43, 0.18);
+}
+.field input[type="file"] {
+  width: 100%;
+  background: var(--ink);
+  border: 1px solid #2b2b33;
+  padding: 24px 15px;
+  font-size: 14px;
+  color: var(--ash);
+  cursor: pointer;
+}
+.batch-actions-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.batch-count { font-family: var(--font-util); font-size: 14px; letter-spacing: 2px; color: var(--gold); }
+.batch-list { display: flex; flex-wrap: wrap; gap: 8px; }
+.name-chip {
+  border: 1px solid rgba(201, 162, 84, 0.4);
+  background: rgba(201, 162, 84, 0.06);
+  color: var(--paper);
+  font-size: 14px;
+  letter-spacing: 1px;
+  padding: 6px 14px;
+}
+.batch-run-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  border-top: 1px solid var(--line);
+  padding-top: 20px;
+}
+.batch-mode {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: var(--ash);
+  letter-spacing: 1px;
+}
+.batch-mode select {
+  background: var(--ink);
+  border: 1px solid #2b2b33;
+  color: var(--paper);
+  padding: 10px 12px;
+  font-size: 14px;
+}
+.batch-bar {
+  position: relative;
+  height: 30px;
+  border: 1px solid var(--line);
+  background: var(--ink);
+  overflow: hidden;
+}
+.batch-bar-fill {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--red-deep), var(--red));
+  transition: width 0.3s var(--ease-out);
+}
+.batch-bar-text {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-util);
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: var(--paper);
+}
+@media (max-width: 880px) {
+  .batch-row { grid-template-columns: 1fr; }
+}
+
 .invite-layout {
   display: grid;
   grid-template-columns: minmax(300px, 400px) minmax(0, 1fr);

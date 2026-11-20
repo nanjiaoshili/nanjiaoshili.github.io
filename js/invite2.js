@@ -241,6 +241,15 @@
     ctx.restore();
   }
 
+  /* 暴露绘制能力给批量生成页（batch.html）复用 */
+  window.NJSL_INVITE_DRAW = {
+    drawInvite: drawInvite,
+    loadFonts: loadFonts,
+    loadImg: loadImg,
+    CW: CW,
+    CH: CH
+  };
+
   /* ---------- 页面交互 ---------- */
   var canvas = document.getElementById("invite-canvas");
   var preview = document.getElementById("invite-preview");
